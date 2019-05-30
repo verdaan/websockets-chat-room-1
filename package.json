@@ -1,0 +1,11 @@
+{
+  "name": "mariochat-socketio",
+  "version": "1.0.0",
+  "description": "chat room using socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vardaan",
+  "license": "ISC"
+}
