@@ -15,3 +15,9 @@ btn.addEventListener('click', () => {
     handle: handle.value
   });
 });
+
+// listen for events from server
+socket.on('chat', (data) => {
+  // when chat event received on client side, add HTML with message to output div
+  output.innerHTML += `<p><strong>${data.handle}: </strong>${data.message}</p>`;
+});
