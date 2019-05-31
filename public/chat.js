@@ -26,7 +26,9 @@ message.addEventListener('keypress', () => {
 socket.on('chat', (data) => {
   // when chat event received on client side, add HTML with message to output div
   output.innerHTML += `<p><strong>${data.handle}: </strong>${data.message}</p>`;
+});
 
+socket.on('typing', (data) => {
   // when typing event received, add HTML to feedback div
   feedback.innerHTML = `<p><em>${data}</em></p>`;
 });
