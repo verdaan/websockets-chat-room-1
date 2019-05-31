@@ -15,6 +15,12 @@ app.use(express.static('public'));
 // socket setup
 const io = socket(server);
 
+// listen for connection requests and events
 io.on('connection', (socket) => {
   console.log('Created socket connection:', socket.id);
+
+  // when event 'chat' is received, emit the received data to every connected socket
+  socket.on('chat', (data) => {
+    io.emit('chat', data);
+  });
 });
