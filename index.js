@@ -23,4 +23,9 @@ io.on('connection', (socket) => {
   socket.on('chat', (data) => {
     io.emit('chat', data);
   });
+
+  // when event 'typing' is received, broadcast the received data showing which user is typing
+  socket.on('typing', (handle) => {
+    socket.broadcast.emit('typing', `${handle} is typing...`);
+  });
 });
